@@ -1,0 +1,35 @@
+{
+  "name": "Lumi MVP",
+  "image": "mcr.microsoft.com/devcontainers/java:1-21-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    }
+  },
+  "forwardPorts": [8080, 5173],
+  "portsAttributes": {
+    "8080": {
+      "label": "Lumi API",
+      "onAutoForward": "notify"
+    },
+    "5173": {
+      "label": "Lumi frontend",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "npm --prefix frontend ci",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "redhat.java",
+        "vscjava.vscode-maven",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.compile.nullAnalysis.mode": "automatic"
+      }
+    }
+  }
+}
