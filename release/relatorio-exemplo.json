@@ -1,0 +1,279 @@
+{
+  "simulado": true,
+  "titulo": "Lumi • Resumo para consulta",
+  "aviso": "Persona e dados fictícios. Resumo descritivo, sem validação clínica; não é diagnóstico. Seleção autoriza apenas exportação local; nenhum dado é enviado à clínica.",
+  "dataReferencia": "2026-10-27",
+  "secoes": {
+    "sintomas": [
+      {
+        "id": 20,
+        "data": "2026-10-27",
+        "tipo": "FADIGA",
+        "intensidade": 8
+      },
+      {
+        "id": 19,
+        "data": "2026-10-27",
+        "tipo": "ENERGIA",
+        "intensidade": 3
+      },
+      {
+        "id": 16,
+        "data": "2026-10-27",
+        "tipo": "BEM_ESTAR",
+        "intensidade": 6
+      },
+      {
+        "id": 18,
+        "data": "2026-10-26",
+        "tipo": "FADIGA",
+        "intensidade": 7
+      },
+      {
+        "id": 17,
+        "data": "2026-10-25",
+        "tipo": "FADIGA",
+        "intensidade": 7
+      },
+      {
+        "id": 15,
+        "data": "2026-10-18",
+        "tipo": "BEM_ESTAR",
+        "intensidade": 6
+      },
+      {
+        "id": 14,
+        "data": "2026-10-09",
+        "tipo": "BEM_ESTAR",
+        "intensidade": 6
+      },
+      {
+        "id": 13,
+        "data": "2026-10-07",
+        "tipo": "COLICA",
+        "intensidade": 8
+      },
+      {
+        "id": 12,
+        "data": "2026-10-06",
+        "tipo": "COLICA",
+        "intensidade": 9
+      },
+      {
+        "id": 11,
+        "data": "2026-09-30",
+        "tipo": "BEM_ESTAR",
+        "intensidade": 6
+      },
+      {
+        "id": 10,
+        "data": "2026-09-21",
+        "tipo": "BEM_ESTAR",
+        "intensidade": 6
+      },
+      {
+        "id": 9,
+        "data": "2026-09-12",
+        "tipo": "BEM_ESTAR",
+        "intensidade": 6
+      },
+      {
+        "id": 8,
+        "data": "2026-09-09",
+        "tipo": "COLICA",
+        "intensidade": 8
+      },
+      {
+        "id": 7,
+        "data": "2026-09-08",
+        "tipo": "COLICA",
+        "intensidade": 8
+      },
+      {
+        "id": 6,
+        "data": "2026-09-03",
+        "tipo": "BEM_ESTAR",
+        "intensidade": 6
+      },
+      {
+        "id": 5,
+        "data": "2026-08-25",
+        "tipo": "BEM_ESTAR",
+        "intensidade": 6
+      },
+      {
+        "id": 4,
+        "data": "2026-08-16",
+        "tipo": "BEM_ESTAR",
+        "intensidade": 6
+      },
+      {
+        "id": 3,
+        "data": "2026-08-12",
+        "tipo": "COLICA",
+        "intensidade": 9
+      },
+      {
+        "id": 2,
+        "data": "2026-08-11",
+        "tipo": "COLICA",
+        "intensidade": 9
+      },
+      {
+        "id": 1,
+        "data": "2026-08-07",
+        "tipo": "BEM_ESTAR",
+        "intensidade": 6
+      }
+    ],
+    "ciclo": {
+      "menstruacoes": [
+        {
+          "id": 1,
+          "inicio": "2026-08-11",
+          "fim": "2026-08-15",
+          "fluxo": "MODERADO"
+        },
+        {
+          "id": 2,
+          "inicio": "2026-09-08",
+          "fim": "2026-09-12",
+          "fluxo": "MODERADO"
+        },
+        {
+          "id": 3,
+          "inicio": "2026-10-06",
+          "fim": "2026-10-10",
+          "fluxo": "MODERADO"
+        }
+      ],
+      "previsao": {
+        "incerteza": "Estimativa pela média de poucos ciclos. Pode variar e ficar desatualizada sem novos registros. Não identifica ovulação e não serve para contracepção.",
+        "mediaDias": 28,
+        "data": "2026-11-03",
+        "amostras": 2
+      }
+    },
+    "compromissos": [
+      {
+        "id": 1,
+        "tipo": "CONSULTA",
+        "data": "2026-10-28T14:00:00",
+        "descricao": "Consulta demonstrativa — preparar resumo",
+        "status": "AGENDADO"
+      },
+      {
+        "id": 3,
+        "tipo": "RETORNO",
+        "data": "2026-10-28T15:00:00",
+        "descricao": "Retorno demonstrativo smoke",
+        "status": "AGENDADO"
+      },
+      {
+        "id": 2,
+        "tipo": "EXAME",
+        "data": "2026-11-16T08:00:00",
+        "descricao": "Exame fictício previamente agendado",
+        "status": "AGENDADO"
+      }
+    ],
+    "insights": [
+      {
+        "regra": "A",
+        "titulo": "Seu sono em perspectiva",
+        "texto": "Média recente: 336 min; referência pessoal anterior: 441 min. Diferença: -105 min. 30 noites de referência, sem sobreposição com as 3 recentes.",
+        "inicio": "2026-09-25",
+        "fim": "2026-10-27",
+        "origem": [
+          "Sinal #58 | 2026-09-25 | sono 455 min",
+          "Sinal #59 | 2026-09-26 | sono 437 min",
+          "Sinal #60 | 2026-09-27 | sono 433 min",
+          "Sinal #61 | 2026-09-28 | sono 420 min",
+          "Sinal #62 | 2026-09-29 | sono 442 min",
+          "Sinal #63 | 2026-09-30 | sono 448 min",
+          "Sinal #64 | 2026-10-01 | sono 460 min",
+          "Sinal #65 | 2026-10-02 | sono 423 min",
+          "Sinal #66 | 2026-10-03 | sono 417 min",
+          "Sinal #67 | 2026-10-04 | sono 441 min",
+          "Sinal #68 | 2026-10-05 | sono 461 min",
+          "Sinal #69 | 2026-10-06 | sono 461 min",
+          "Sinal #70 | 2026-10-07 | sono 439 min",
+          "Sinal #71 | 2026-10-08 | sono 426 min",
+          "Sinal #72 | 2026-10-09 | sono 462 min",
+          "Sinal #73 | 2026-10-10 | sono 445 min",
+          "Sinal #74 | 2026-10-11 | sono 451 min",
+          "Sinal #75 | 2026-10-12 | sono 464 min",
+          "Sinal #76 | 2026-10-13 | sono 462 min",
+          "Sinal #77 | 2026-10-14 | sono 432 min",
+          "Sinal #78 | 2026-10-15 | sono 450 min",
+          "Sinal #79 | 2026-10-16 | sono 447 min",
+          "Sinal #80 | 2026-10-17 | sono 427 min",
+          "Sinal #81 | 2026-10-18 | sono 428 min",
+          "Sinal #82 | 2026-10-19 | sono 431 min",
+          "Sinal #83 | 2026-10-20 | sono 418 min",
+          "Sinal #84 | 2026-10-21 | sono 423 min",
+          "Sinal #85 | 2026-10-22 | sono 442 min",
+          "Sinal #86 | 2026-10-23 | sono 419 min",
+          "Sinal #87 | 2026-10-24 | sono 459 min",
+          "Sinal #88 | 2026-10-25 | sono 343 min",
+          "Sinal #89 | 2026-10-26 | sono 332 min",
+          "Sinal #90 | 2026-10-27 | sono 333 min"
+        ],
+        "limitacoes": "Dados fictícios. Regra demonstrativa, sem validação clínica. Não é diagnóstico; associação não indica causa. Leve dúvidas à equipe de saúde."
+      },
+      {
+        "regra": "B",
+        "titulo": "Fadiga recorrente registrada",
+        "texto": "3 dia(s) distinto(s) com fadiga >= 6/10 nos últimos 7 dias. Recorrência demonstrativa: 3 dias. Atividade média nos 3 dias com fadiga e sinal disponível: 3045 passos. Nos outros 4 dias com sinal: 5961 passos. Ausência de registro não significa ausência de fadiga.",
+        "inicio": "2026-10-21",
+        "fim": "2026-10-27",
+        "origem": [
+          "Sintoma #20 | 2026-10-27 | FADIGA 8/10",
+          "Sintoma #18 | 2026-10-26 | FADIGA 7/10",
+          "Sintoma #17 | 2026-10-25 | FADIGA 7/10",
+          "Sinal #84 | 2026-10-21 | 6775 passos",
+          "Sinal #85 | 2026-10-22 | 8654 passos",
+          "Sinal #86 | 2026-10-23 | 5059 passos",
+          "Sinal #87 | 2026-10-24 | 3354 passos",
+          "Sinal #88 | 2026-10-25 | 3398 passos",
+          "Sinal #89 | 2026-10-26 | 3330 passos",
+          "Sinal #90 | 2026-10-27 | 2407 passos"
+        ],
+        "limitacoes": "Dados fictícios. Regra demonstrativa, sem validação clínica. Não é diagnóstico; associação não indica causa. Leve dúvidas à equipe de saúde."
+      },
+      {
+        "regra": "C",
+        "titulo": "Seu próximo cuidado",
+        "texto": "CONSULTA em 2026-10-28 às 14:00 — Consulta demonstrativa — preparar resumo. Faltam 1 dia(s).",
+        "inicio": "2026-10-27",
+        "fim": "2026-11-26",
+        "origem": [
+          "Compromisso #1 | status AGENDADO"
+        ],
+        "limitacoes": "Agenda fictícia cadastrada pela usuária. Não recomenda exames ou periodicidade clínica."
+      },
+      {
+        "regra": "C",
+        "titulo": "Seu próximo cuidado",
+        "texto": "RETORNO em 2026-10-28 às 15:00 — Retorno demonstrativo smoke. Faltam 1 dia(s).",
+        "inicio": "2026-10-27",
+        "fim": "2026-11-26",
+        "origem": [
+          "Compromisso #3 | status AGENDADO"
+        ],
+        "limitacoes": "Agenda fictícia cadastrada pela usuária. Não recomenda exames ou periodicidade clínica."
+      },
+      {
+        "regra": "C",
+        "titulo": "Seu próximo cuidado",
+        "texto": "EXAME em 2026-11-16 às 08:00 — Exame fictício previamente agendado. Faltam 20 dia(s).",
+        "inicio": "2026-10-27",
+        "fim": "2026-11-26",
+        "origem": [
+          "Compromisso #2 | status AGENDADO"
+        ],
+        "limitacoes": "Agenda fictícia cadastrada pela usuária. Não recomenda exames ou periodicidade clínica."
+      }
+    ]
+  }
+}
