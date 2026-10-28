@@ -1,24 +1,40 @@
-# Lumi MVP â€” Luz sobre vocÃª
+# Lumi — dados que ajudam a preparar a conversa
 
-**O seu relÃ³gio mede. A Lumi leva isso atÃ© a consulta.**
+> O seu relógio mede. A Lumi organiza, explica e leva contexto para a consulta.
 
-AplicaÃ§Ã£o local demonstrÃ¡vel: React + Vite, API Java 21/Spring Boot, H2 em arquivo, regras explicÃ¡veis e PDF. Somente dados fictÃ­cios. Demo ancorada em **27/10/2026**; relÃ³gio fixo para repetir o ensaio. NÃ£o Ã© software clÃ­nico.
+O Lumi é um MVP de acompanhamento pessoal de saúde e bem-estar. Ele reúne sinais simulados, ciclo, sintomas, registros de cuidado, agenda e relatórios em uma experiência web local — com regras transparentes, fontes visíveis e linguagem cuidadosa.
 
-## InÃ­cio mais rÃ¡pido (pacote entregue)
+Este repositório contém uma demonstração técnica, não um produto clínico. Todos os dados são fictícios. Não insira dados reais nem exponha o servidor à internet.
 
-Instale **JDK 21**. No terminal, entre na pasta `lumi-mvp` extraÃ­da do ZIP:
+## Por que o Lumi existe
+
+Dados de saúde costumam ficar espalhados entre aplicativos, anotações e memórias. O Lumi explora uma forma mais simples de transformar esse histórico em contexto útil para a própria pessoa e para a conversa com profissionais de saúde, sem fingir que uma regra é um diagnóstico.
+
+## O que está na demonstração
+
+- **Home:** sinais simulados do dia, próximos compromissos e atalhos.
+- **Cycle:** calendário, períodos, sintomas de 0 a 10, histórico e previsão média com limitações explícitas.
+- **Care:** registros de fadiga, energia, bem-estar e dor, com histórico e conteúdo educativo.
+- **Coach:** regras A/B/C implementadas em Java, com origem dos registros, janelas analisadas e limitações.
+- **Agenda:** consultas, exames e retornos, com avisos no Home e no Coach.
+- **Relatório:** seleção explícita de categorias, prévia baseada na API e PDF paginado para uso local.
+- **API:** validação, erros JSON, CORS restrito e separação entre controller, service, repository e regras.
+
+## Início mais rápido (pacote entregue)
+
+Instale **JDK 21**. No terminal, entre na pasta `lumi-mvp` extraída do ZIP:
 
 ```sh
 java -jar release/lumi-1.0.0.jar
 ```
 
-Abra **http://localhost:8080**. O JAR inclui o frontend compilado e cria automaticamente o banco H2 em `data/lumi.mv.db`, relativo Ã  pasta do comando. NÃ£o precisa instalar banco, Maven ou Node para executar o JAR. Internet sÃ³ Ã© necessÃ¡ria para instalar o Java; o aplicativo funciona localmente. Ctrl+C encerra.
+Abra **http://localhost:8080**. O JAR inclui o frontend compilado e cria automaticamente o banco H2 em `data/lumi.mv.db`, relativo à pasta do comando. Não precisa instalar banco, Maven ou Node para executar o JAR. Internet só é necessária para instalar o Java; o aplicativo funciona localmente. Ctrl+C encerra.
 
-Windows: confirme `java -version` no PowerShell. Se o Java nÃ£o for reconhecido, instale JDK 21 e abra um novo terminal. Execute a partir da pasta extraÃ­da, nunca dentro da visualizaÃ§Ã£o do ZIP.
+Windows: confirme `java -version` no PowerShell. Se o Java não for reconhecido, instale JDK 21 e abra um novo terminal. Execute a partir da pasta extraída, nunca dentro da visualização do ZIP.
 
-## Executar e modificar o cÃ³digo
+## Executar e modificar o código
 
-Requisitos: JDK 21, Maven 3.9+, Node.js 22+ e npm. Primeira instalaÃ§Ã£o requer internet.
+Requisitos: JDK 21, Maven 3.9+, Node.js 22+ e npm. Primeira instalação requer internet.
 
 Terminal 1:
 ```sh
@@ -31,7 +47,7 @@ cd frontend
 npm ci
 npm run dev
 ```
-Abra http://localhost:5173. Vite encaminha `/api` para localhost:8080. O backend usa `backend/data/lumi.mv.db` nesse modo. NÃ£o use duas APIs sobre o mesmo banco simultaneamente.
+Abra http://localhost:5173. Vite encaminha `/api` para localhost:8080. O backend usa `backend/data/lumi.mv.db` nesse modo. Não use duas APIs sobre o mesmo banco simultaneamente.
 
 ## Compilar e testar
 
@@ -42,50 +58,50 @@ cd ../frontend
 npm ci
 npm run build
 ```
-Para gerar novamente o executÃ¡vel com frontend, na raiz:
+Para gerar novamente o executável com frontend, na raiz:
 ```sh
 python scripts/package.py
 ```
-O script executa build React, copia `dist` para recursos estÃ¡ticos e roda `mvn clean package` (inclui testes), gerando `release/lumi-1.0.0.jar`.
+O script executa build React, copia `dist` para recursos estáticos e roda `mvn clean package` (inclui testes), gerando `release/lumi-1.0.0.jar`.
 
-Testes de navegador opcionais para execuÃ§Ã£o local: veja `frontend/e2e/flow.spec.js`. Requer API e frontend ligados e banco de demonstraÃ§Ã£o limpo. Execute `npx playwright install chromium` e `npx playwright test` em `frontend`. Eles inserem dados fictÃ­cios. Consulte `docs/VALIDACAO.md` para distinguir testes efetivamente executados aqui de testes fornecidos.
+Testes de navegador opcionais para execução local: veja `frontend/e2e/flow.spec.js`. Requer API e frontend ligados e banco de demonstração limpo. Execute `npx playwright install chromium` e `npx playwright test` em `frontend`. Eles inserem dados fictícios. Consulte `docs/VALIDACAO.md` para distinguir testes efetivamente executados aqui de testes fornecidos.
 
-## O que estÃ¡ implementado
+## O que está implementado
 
-- **Home:** sinais simulados do dia, prÃ³ximos compromissos e atalhos.
-- **Cycle:** calendÃ¡rio navegÃ¡vel, perÃ­odos e fluxo, sintomas 0â€“10, histÃ³rico, previsÃ£o mÃ©dia com limitaÃ§Ãµes.
-- **Care:** registros de fadiga, energia, bem-estar e dor; histÃ³rico e texto educativo, sem risco clÃ­nico.
-- **Coach:** regras A/B/C no Java; origem por registro, janelas e limitaÃ§Ãµes. Recalcula apÃ³s cada inclusÃ£o.
+- **Home:** sinais simulados do dia, próximos compromissos e atalhos.
+- **Cycle:** calendário navegável, períodos e fluxo, sintomas 0–10, histórico, previsão média com limitações.
+- **Care:** registros de fadiga, energia, bem-estar e dor; histórico e texto educativo, sem risco clínico.
+- **Coach:** regras A/B/C no Java; origem por registro, janelas e limitações. Recalcula após cada inclusão.
 - **Agenda:** cadastrar consultas, exames e retornos; listar; avisos no Home e Coach.
-- **RelatÃ³rio:** seleÃ§Ã£o explÃ­cita de categorias, prÃ©via da resposta da API, download PDF paginado. Insights incluem suas prÃ³prias fontes; aviso antes da seleÃ§Ã£o.
-- **API:** validaÃ§Ã£o, erros JSON, CORS restrito, separaÃ§Ã£o controller/service/repository/regras.
-- **H2:** 90 sinais, 3 menstruaÃ§Ãµes, sintomas e agenda; `Random(42)`; seed transacional somente se persona nÃ£o existe; restriÃ§Ã£o Ãºnica por dia para sinais.
+- **Relatório:** seleção explícita de categorias, prévia da resposta da API, download PDF paginado. Insights incluem suas próprias fontes; aviso antes da seleção.
+- **API:** validação, erros JSON, CORS restrito, separação controller/service/repository/regras.
+- **H2:** 90 sinais, 3 menstruações, sintomas e agenda; `Random(42)`; seed transacional somente se persona não existe; restrição única por dia para sinais.
 
 ## Ensaio em 2 minutos
 
-1. Home: mostre â€œdados fictÃ­ciosâ€ e sono/atividade.
-2. Coach: regra B comeÃ§a com dois dias de fadiga.
+1. Home: mostre “dados fictícios” e sono/atividade.
+2. Coach: regra B começa com dois dias de fadiga.
 3. Care: registre Fadiga, intensidade 7, em 27/10/2026.
-4. HistÃ³rico mostra o novo registro. Coach muda para **Fadiga recorrente registrada** (3 dias distintos).
-5. Abra â€œVer origem da anÃ¡liseâ€; mostre IDs, datas e sinais usados.
-6. Agenda: cadastre â€œRetorno demonstrativoâ€ para 28/10/2026 Ã s 15h; confira Home/Coach.
-7. RelatÃ³rio: selecione itens, gere prÃ©via, toque em Preparar PDF e use Salvar PDF ou Abrir PDF.
+4. Histórico mostra o novo registro. Coach muda para **Fadiga recorrente registrada** (3 dias distintos).
+5. Abra “Ver origem da análise”; mostre IDs, datas e sinais usados.
+6. Agenda: cadastre “Retorno demonstrativo” para 28/10/2026 às 15h; confira Home/Coach.
+7. Relatório: selecione itens, gere prévia, toque em Preparar PDF e use Salvar PDF ou Abrir PDF.
 
-## PersistÃªncia e restauraÃ§Ã£o da demo
+## Persistência e restauração da demo
 
-Reiniciar mantÃ©m inclusÃµes e nÃ£o repete seed. Para voltar ao inÃ­cio, **pare a API e renomeie** a pasta `data` usada (por exemplo, para `data-ensaio-1`). Ao iniciar novamente, um banco limpo Ã© criado. Assim o ensaio anterior Ã© preservado. O mesmo dia pode conter vÃ¡rios sintomas, mas a regra B conta dias distintos.
+Reiniciar mantém inclusões e não repete seed. Para voltar ao início, **pare a API e renomeie** a pasta `data` usada (por exemplo, para `data-ensaio-1`). Ao iniciar novamente, um banco limpo é criado. Assim o ensaio anterior é preservado. O mesmo dia pode conter vários sintomas, mas a regra B conta dias distintos.
 
-A data pode ser alterada com `--lumi.demo-date=2026-10-28` ao executar o JAR. Para reconstruir todos os dados em torno de outra data, use um novo banco com `--spring.datasource.url=jdbc:h2:file:./data-nova/lumi`. Alterar sÃ³ a data nÃ£o reescreve o banco existente.
+A data pode ser alterada com `--lumi.demo-date=2026-10-28` ao executar o JAR. Para reconstruir todos os dados em torno de outra data, use um novo banco com `--spring.datasource.url=jdbc:h2:file:./data-nova/lumi`. Alterar só a data não reescreve o banco existente.
 
-## LimitaÃ§Ãµes e roadmap
+## Limitações e roadmap
 
-Sem wearable real, Lumi Band, ML/deep learning, chatbot generativo, rede de clÃ­nicas, credenciamento, notificaÃ§Ãµes externas, envio de PDF, autenticaÃ§Ã£o ou multiusuÃ¡rio. NÃ£o hÃ¡ ediÃ§Ã£o/exclusÃ£o de registros nem confirmaÃ§Ã£o de realizaÃ§Ã£o da agenda; compromissos passados sÃ£o descritos como nÃ£o confirmados. FC e temperatura sÃ£o exibidas, nÃ£o interpretadas. PrevisÃ£o nÃ£o estima ovulaÃ§Ã£o e nÃ£o Ã© contraceptivo. NÃ£o hÃ¡ validaÃ§Ã£o clÃ­nica dos limiares.
+Sem wearable real, Lumi Band, ML/deep learning, chatbot generativo, rede de clínicas, credenciamento, notificações externas, envio de PDF, autenticação ou multiusuário. Não há edição/exclusão de registros nem confirmação de realização da agenda; compromissos passados são descritos como não confirmados. FC e temperatura são exibidas, não interpretadas. Previsão não estima ovulação e não é contraceptivo. Não há validação clínica dos limiares.
 
-Ã‰ uma demo local, nÃ£o um produto pronto para pacientes: **nÃ£o digite dados reais e nÃ£o exponha o servidor Ã  internet**. A escolha de itens do PDF Ã© controle de exportaÃ§Ã£o local, nÃ£o uma implementaÃ§Ã£o completa de consentimento/LGPD. Fontes visuais sÃ£o locais no pacote; nenhuma telemetria foi implementada.
+É uma demo local, não um produto pronto para pacientes: **não digite dados reais e não exponha o servidor à internet**. A escolha de itens do PDF é controle de exportação local, não uma implementação completa de consentimento/LGPD. Fontes visuais são locais no pacote; nenhuma telemetria foi implementada.
 
-Mais detalhes: [API](docs/API.md), [arquitetura](docs/ARQUITETURA.md), [pitch e perguntas](docs/PITCH.md), [validaÃ§Ã£o](docs/VALIDACAO.md).
+Mais detalhes: [API](docs/API.md), [arquitetura](docs/ARQUITETURA.md), [pitch e perguntas](docs/PITCH.md), [validação](docs/VALIDACAO.md).
 
-## VersÃ£o mobile
+## Versão mobile
 
-Veja [MOBILE.md](docs/MOBILE.md). No Windows, `INICIAR-MOBILE.bat` permite abrir a demo no celular pela mesma rede Wi-Fi privada. A versÃ£o entregue Ã© web responsiva; nÃ£o Ã© um APK.
+Veja [MOBILE.md](docs/MOBILE.md). No Windows, `INICIAR-MOBILE.bat` permite abrir a demo no celular pela mesma rede Wi-Fi privada. A versão entregue é web responsiva; não é um APK.
 
