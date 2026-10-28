@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite';
 
+const pagesBasePath = process.env.VITE_BASE_PATH || '/';
+
 export default defineConfig({
+  base: pagesBasePath.endsWith('/') ? pagesBasePath : `${pagesBasePath}/`,
   server: {
     host: '0.0.0.0',
     port: 5173,

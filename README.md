@@ -72,6 +72,12 @@ npm run dev -- --host 0.0.0.0
 
 Use a porta encaminhada **5173** para abrir a aplicação. A API fica disponível na porta **8080**. O Codespace mantém o banco H2 em arquivo dentro do ambiente; ele não substitui um banco de produção.
 
+## Deploy no GitHub Pages
+
+O workflow `.github/workflows/pages.yml` publica somente o build estático de `frontend/dist` a cada push em `main` (ou execução manual). Na primeira publicação, em **Settings → Pages**, selecione **GitHub Actions** como origem do deploy. O Vite usa o caminho de projeto correto automaticamente.
+
+O Pages hospeda apenas a interface: não executa a API Spring nem o banco H2. Sem backend, a demo usa dados fictícios locais no navegador; alterações ficam no armazenamento local daquele navegador e não são sincronizadas. Não insira dados reais.
+
 ## Compilar e testar
 
 ```sh
